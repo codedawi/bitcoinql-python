@@ -1,2 +1,2 @@
 # bitcoinql-python
-GraphQL interface on top of bitcoin core node
+GraphQL interface on top of `bitcoind` and `lnd` implemented in python.
