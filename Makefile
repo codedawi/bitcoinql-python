@@ -1,18 +1,21 @@
-SHELL := /usr/bin/env bash
 IMAGE := bitcoinql
 VERSION := latest
 
-.PHONY: download-poetry
-download-poetry:
-	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-
-.PHONY: docker
-docker:
+build-docker:
 	docker build \
 		-t $(IMAGE):$(VERSION) . \
-		-f Dockerfile --no-cache
+		-f Dockerfile
 
-.PHONY: clean_docker
-clean_docker:
+run-docker:
+	docker run \
+		-it \
+		-v $(PWD):/app \
+		$(IMAGE):$(VERSION) \
+		/bin/bash
+
+clean-docker:
 	docker rmi -f $(IMAGE):$(VERSION)
+
+.PHONY: build-docker clean-docker run-docker
+
 
