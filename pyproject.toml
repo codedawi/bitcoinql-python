@@ -1,22 +1,6 @@
-[tool.poetry]
-name = "bitcoinql"
-version = "0.1.0"
-description = "GraphQL interface on top of bitcoin core node"
-authors = ["codedawi <brett@codedawi.com>"]
-readme = "README.md"
-license = "MIT"
-repository = "https://github.com/codedawi/bitcoinql-python"
-homepage = "https://github.com/codedawi/bitcoinql-python"
-
-[tool.poetry.dependencies]
-python = "^3.6"
-aiohttp = "^3.6.2"
-graphene = "^2.1.8"
-pydantic = "^1.5.1"
-
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
-
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = [
+    "setuptools>=30.3.0",
+    "wheel",
+    "setuptools_scm>=3.3.1",
+]
